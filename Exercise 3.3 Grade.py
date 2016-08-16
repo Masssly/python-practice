@@ -22,6 +22,7 @@ elif (score>=0.6):
 	print ("D")
 elif (score<0.6):
 	print ("F")
+#else print("Bad score does not work")
 
 #Exercise 4.6 
 '''Rewrite the grade program from the previous chapter using a function called computegrade that takes a score as its parameter and returns a grade as a string.
@@ -35,3 +36,20 @@ Enter score: 0.75 C
 Enter score: 0.5 F
 Run the program repeatedly to test the various different values for input.'''
 
+score = float(input("Enter a score between 0.0 and 0.1\n"))#\n for new line
+def computegrade (float):
+	if (score < 0.0) or (score > 1.0):
+		print ("Error message:Out of range")
+	elif (score>=0.9):
+		print ("A")
+	elif (score>=0.8):
+		print ("B")
+	elif (score>=0.7):
+		print ("C")
+	elif (score>=0.6):
+		print ("D")
+	elif (score<0.6):
+		print ("F")
+	return;
+print ("\nThe program is about to begin:")
+computegrade(score)
