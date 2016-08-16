@@ -37,7 +37,7 @@ Enter score: 0.5 F
 Run the program repeatedly to test the various different values for input.'''
 
 score = float(input("Enter a score between 0.0 and 0.1\n"))#\n for new line
-def computegrade (float):
+def computegrade (score):
 	if (score < 0.0) or (score > 1.0):
 		print ("Error message:Out of range")
 	elif (score>=0.9):
