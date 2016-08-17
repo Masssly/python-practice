@@ -52,8 +52,6 @@ def computegrade(score):
 	else:
 		print ("\nThe corresponding grade is: F")
 
-
-
 #function to accept and test input
 def test ():
 	userInput = 0
