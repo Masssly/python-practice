@@ -1,9 +1,12 @@
 original_word = str(input("enter any word:\n"))
 lower_original_word = original_word.lower()
 print ("\nOriginal word was: ",lower_original_word)
+
 first_letter = lower_original_word[0]
 pyg = "ay"
+
 new_word = lower_original_word + first_letter +pyg
 print ("\nOriginal word with first letter of\noriginal word plus pyg is: ",new_word)
+
 final_word = new_word[1:len(new_word)] #using the full lenght () does not work
 print ("\nFinal word at end of Pig Latin: ",final_word)
