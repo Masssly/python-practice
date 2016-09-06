@@ -1,0 +1,15 @@
+#Exercise 6.5 Take the following Python code that stores a string:
+str = "X-DSPAM-Confidence: 0.8475" #Enter characters
+print "Given string is>",str,"\n" #Checking if I entered it right
+
+space_location = str.find(' ') #Find location of the "space" character before the number
+print "Location of the space character in the given string above is> ",space_location,"\n" #Print the location in case it may be useful to somebody
+
+number = str[space_location:] #Assign a name to all the characters starting from the space character
+print "All characters following the space character is>",number #Print out the number (But why are the numbers not alligned)
+
+converted = float(number)  #Convert number into a float and assign it to the variable "converted"
+print converted
+
+final_number = converted*2 #Testing that "convefrted" is actually a float
+print final_number # A better way of handling this last bit is by using try and except. See 
