@@ -1,0 +1,20 @@
+#Open romeo
+romeo = open ('D:\sample.txt')
+#print romeo, "\n"
+
+#Declare an empty list to append in items or words later
+first = list()
+
+#Split romeo and append words
+for line in romeo:
+    word = line.rstrip().split() #rstrip() strips characters from the end of the string (default whitespace characters).
+    for element in word:    #Append words into the created list
+        if element in first:
+            continue #If element is in the list, ignore and try next element
+        else:
+            first.append(element)
+            
+#Sort words            
+print "Splitted words as they are","\n", first #Print splited words as they currently are
+first.sort()#Arrange splited words in alphabetical order
+print "\n","Splitted words arranged in alphabetical order","\n", first#Print the alphabetical order of words
