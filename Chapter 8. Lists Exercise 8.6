@@ -1,0 +1,24 @@
+start_list = [] #Declare an empty list
+
+while True: #This loop ensures the user can continue to input integers
+    user_inputs = raw_input("Enter any integer number: ")
+
+    try: #Accept only integers and then append to my enpty list "start_list"
+        user_inputs = int(user_inputs)
+        start_list.append(user_inputs)
+    except: #If anything than an integer is entered, then continue below
+        if any([ #If any of these conditions are met, then print "start_list" and its max and min numbers
+        user_inputs == "done",
+        user_inputs == "Done",
+        user_inputs == "DONE",
+        user_inputs == "DOne",
+        user_inputs == "DONe",
+        user_inputs == "dONE",
+        user_inputs == "Done"
+        ]):
+            print "These are the integer numbers you entered", start_list
+            print "The maximum integer number is:", max(start_list)
+            print "The manimum integer number is:", min(start_list)
+            break
+        else: #If anything either than "Done is entered the program doesnt close, but promtps prompts you to enter an integet to continue. 
+            print "\n","You entered something either than an integer!","\n","Make sure you enter ONLY integers.","\n","Continue by entering 'done' when you are done","\n"
