@@ -1,19 +1,22 @@
 #Open mailbox.txt file
-mailbox = open ("D:\mbox.txt")
+mailbox = open ("D:\mbox-short.txt")
 print mailbox, "\n"
 
 #Find line that starts with "From", split the line into words using the split function.
+
+count = 0
+
 for line in mailbox: 
-    if not line.startswith("From"): 
+    if not line.startswith("From "): 
         continue # If the line does not start with "From". Returns the control to the beginning of the while loop. The continue statement rejects all the remaining statements in the current iteration of the loop and moves the control back to the top of the loop.
-    line  = line.strip()
-    words = line.split() #Assign "words" to split words in the line
-    email_address = words[1]
+    else:
+        print line
+        line  = line.strip()
+        words = line.split() #Assign "words" to split words in the line
+        email_address = words[1]
     #print email_address, "\n" #You may want to print email addresses before counting
-    print email_address.rpartition('@')[-0] #Because we are interested in who sent the message, which is the second word on the From line, I prefer to print the names in the email addresses instead. Beginning at the start of the string, return everything before '@'
+        print email_address.rpartition('@')[-0] #Because we are interested in who sent the message, which is the second word on the From line, I prefer to print the names in the email addresses instead. Beginning at the start of the string, return everything before '@'
    
     #count the number of From (not From:) lines and print out a count at the end
-    count = 0
-    for line in email_address:
         count = count +1
 print "\n","There were", count, "lines in the file with From as the first word."
