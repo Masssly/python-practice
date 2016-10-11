@@ -1,0 +1,20 @@
+txt_file = open("D:\\words.txt")    #Open file containing some lines of words
+print txt_file, "\n"                #Print its handle just to be sure
+
+for line in txt_file:               #Print all the lines in the txt file to know what it contains
+    print line
+    
+    if line.startswith("Who"):      # I choose to work with the last line
+        line = line.strip()         # remove extra spaces from lines
+        words = line.split()        # split lines into words in an array
+        print "\n", line
+        print words
+        
+dictionary = dict()                 # declare a dictionary and add words of the last line as its "values" (note that we didn't say the "keys")  
+dictionary = {"one":words[0], "two":words[1], "three":words[2], "four":words[3], "five":words[4], "six":words[5], "seven":words[6], "eight":words[7]}
+print "\n", dictionary, "\n"
+
+if "one" in dictionary:             #Now check whether "four" is among the keys, print true if yes
+    print True
+if "pale" in dictionary.values():   #Now check whether "four" is among the keys, print true if yes
+    print True
