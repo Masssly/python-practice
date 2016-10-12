@@ -1,0 +1,13 @@
+txt_file = open("D:\mbox-short.txt")
+print txt_file
+days = dict()
+
+for lines in txt_file:
+    if lines.startswith("From "):
+        lines = lines.split()
+        day = lines[2]
+        print day
+        days[day] = days.get(day,0) + 1
+        
+print days
+        
