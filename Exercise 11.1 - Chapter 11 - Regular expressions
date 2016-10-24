@@ -1,0 +1,26 @@
+# Select the file, use try and except to test it.
+data = raw_input("Enter name of file: ") 
+try:
+    data = open(data)
+    print data, "\n"
+except:
+    print "\n","File does not exist (or can't be opened). Program will now exit!"
+    exit()
+
+# Enter regular expresion
+reg_ex = raw_input("Enter regular Regular Expression: ")
+print "You entered the regular expression: ", reg_ex, "\n"
+print "Below are the lines that matched your regular expression:"
+
+# Count the number of lines that matched the regular expression
+# Sample line : "Author: stephen.marquard@uct.ac.za"
+count = 0
+for lines in data:
+    lines = lines.rstrip()
+    matches = re.findall(reg_ex, lines)
+    if len(matches) > 0:
+        print  re.findall("^Author: .*", lines) #In case you wish to see the lines
+        count +=1
+
+#Print the count number of lines
+print "\n", "In all", count, "lines matched the regular expression", "'",reg_ex,"'"
