@@ -1,0 +1,25 @@
+# Select the file, use try and except to test it.
+data = raw_input("Enter name of file: ") 
+
+try:
+    data = open(data)
+    print data, "\n"
+except:
+    print "\n","File does not exist (or can't be opened). Program will now exit!"
+    exit()
+    
+# Sample line: "New Revision: 39772:
+reg_ex = "^New .+: ([0-9.]+)"
+
+
+numbers = []
+for lines in data:
+    lines = lines.rstrip()
+    revision = re.findall(reg_ex, lines)
+    if len(revision) > 0:   #The below code will only now apply to those lines we are interested in.
+       for each_number in revision: #This for loop will convert our numbers (appearing/recognised as strings) into float values for computation
+           each_number = float(each_number)
+       numbers.append(each_number)
+    
+print "Below are the numbers in the lines that matched your regular expression: ", "\n", numbers, "\n"
+print "Average of numbers is:", (sum(numbers))/(len(numbers))
