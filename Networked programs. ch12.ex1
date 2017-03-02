@@ -1,0 +1,16 @@
+import socket
+
+try:
+    url = raw_input("Enter the URL you want: ")
+    components = url.split("/")#to break the URL into its component parts so you can extract the host name for the socket connect call.
+    print components
+    component2 = components[2]# we want the second part of the split
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((component2, 80))#First the program makes a connection to port 80 on the server "url".
+    mysock.send('GET '+url+' HTTP/1.0\n\n')
+    
+    while True:
+        data = mysock.recv(512)#will read at most 512 bytes, blocking if no data is waiting to be read.
+        if ( len(data) < 1 ) :
+             break
+        print data;
